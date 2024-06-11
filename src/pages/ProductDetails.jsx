@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { useParams } from "react-router-dom";
+import { CartContext } from "../contexts/CartContext";
+import { ProductContext } from "../contexts/ProductContext";
 
 const ProductDetails = () => {
-  return (
-    <div>ProductDetails</div>
-  )
-}
+  //get product id from the url
+  const { id } = useParams();
+  const { products } = useContext(ProductContext);
+  const { addToCart } = useContext(CartContext);
 
-export default ProductDetails
+  const product = products.find((item) => item.id === parseInt(id));
+
+  if (!product) {
+    return <section>Loading...</section>;
+  }
+
+  return <div>ProductDetails</div>;
+};
+
+export default ProductDetails;
