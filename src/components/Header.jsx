@@ -23,11 +23,16 @@ const Header = () => {
         isActive ? " bg-white py-4 shadow-md" : " bg-none py-6"
       } fixed w-full z-20 transition-all`}
     >
-      <div className="flex container mx-auto items-center justify-between h-full ">
+      <div className="flex container mx-auto items-center h-full justify-between">
         {/* logo */}
-        <Link to={"/"}>
-          <img src={Logo} alt="logo" className=" w-[40px]" />
-        </Link>
+        <div className=" flex items-center">
+          <Link to={"/"}>
+            <img src={Logo} alt="logo" className=" w-[40px] flex-1" />
+          </Link>
+          <p className=" font-semibold">Sereti Store</p>
+        </div>
+        {/* store name */}
+
         {/* cart */}
         <button onClick={() => setIsOpen(!isOpen)} className=" flex relative">
           <BsBag className="text-2xl" />

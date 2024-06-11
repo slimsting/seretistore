@@ -30,7 +30,7 @@ export default {
         secondary: '#f5E6E0',
       },
       backgroundImage: {
-        hero: "url('./img/bg_hero.svg')",
+        hero: "url('./img/bg_hero (2).svg')",
       },
     },
 
