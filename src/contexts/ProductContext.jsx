@@ -6,20 +6,32 @@ export const ProductContext = createContext();
 
 const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
+  const [error, setError] = useState();
+  const [isLoading, setIsLoading] = useState(false);
   const productsLink = "https://fakestoreapi.com/products";
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await fetch(productsLink);
-      const data = await response.json();
-      setProducts(data);
+      try {
+        setIsLoading(true);
+
+        const response = await fetch(productsLink);
+        const data = await response.json();
+        setProducts(data);
+
+        setIsLoading(false);
+      } catch (e) {
+        setError(e);
+      } finally {
+        setIsLoading(false);
+      }
     };
 
     fetchProducts();
   }, []);
 
   return (
-    <ProductContext.Provider value={{ products }}>
+    <ProductContext.Provider value={{ products, isLoading, error }}>
       {children}
     </ProductContext.Provider>
   );

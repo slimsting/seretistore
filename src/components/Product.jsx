@@ -22,17 +22,18 @@ const Product = ({ product }) => {
         </div>
         <div>
           {/* button */}
-          <div className=" absolute top-6 -right-11 group-hover:right-5 p-2 flex flex-col items-center justify-center gap-y-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ">
-            <div>
+          <div className=" absolute -bottom-11 right-12 md:right-9 lg:right-1 p-2 flex flex-col items-center justify-center gap-x-2 opacity-0 group-hover:bottom-0 group-hover:opacity-100 transition-all duration-300 ">
+            <div className="flex">
               <button
                 onClick={() => addToCart(product, id)}
-                className=" flex justify-center items-center text-white w-12 h-12 bg-red-500 hover:bg-red-300 active:bg-red-500"
+                className=" border drop-shadow-xl flex justify-center items-center text-white w-40 h-12 bg-red-500 active:bg-red-400"
               >
+                Add to Cart
                 <BsPlus className=" text-3xl" />
               </button>
               <Link
                 to={`/product/${id}`}
-                className=" w-12 h-12 bg-white flex justify-center items-center text-primary drop-shadow-xl hover:bg-slate-200"
+                className=" w-12 h-12 border bg-white flex justify-center items-center text-primary drop-shadow-xl "
               >
                 <BsEyeFill />
               </Link>

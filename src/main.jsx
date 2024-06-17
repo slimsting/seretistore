@@ -7,13 +7,13 @@ import SidebarProvider from "./contexts/SidebarContext.jsx";
 import CartProvider from "./contexts/CartContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <SidebarProvider>
-    <CartProvider>
-      <ProductProvider>
-        <React.StrictMode>
+  <React.StrictMode>
+    <SidebarProvider>
+      <CartProvider>
+        <ProductProvider>
           <App />
-        </React.StrictMode>
-      </ProductProvider>
-    </CartProvider>
-  </SidebarProvider>
+        </ProductProvider>
+      </CartProvider>
+    </SidebarProvider>
+  </React.StrictMode>
 );

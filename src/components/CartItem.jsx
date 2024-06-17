@@ -34,7 +34,7 @@ const CartItem = ({ item }) => {
               {/* minus icon */}
               <button
                 onClick={() => decreaseAmount(id)}
-                className="flex-1 flex justify-center items-center h-full"
+                className="flex-1 flex justify-center items-center h-full active:bg-red-500"
               >
                 <IoMdRemove />
               </button>
@@ -45,7 +45,7 @@ const CartItem = ({ item }) => {
               {/* plus icon */}
               <button
                 onClick={() => increaseAmount(id)}
-                className=" flex-1 h-full flex justify-center items-center"
+                className=" flex-1 h-full flex justify-center items-center active:bg-green-500"
               >
                 <IoMdAdd />
               </button>
