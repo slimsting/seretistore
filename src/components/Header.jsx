@@ -33,7 +33,7 @@ const Header = () => {
           onClick={() => setActivePage("store")}
           className=" flex items-center"
         >
-          <Link to={"/"} className="flex items-center flex-col">
+          <Link to={"/"} className="flex items-center gap-1 justify-center">
             <img src={Logo} alt="logo" className=" w-[40px] flex-1" />
             <p className={" font-semibold"}>Sereti Store</p>
           </Link>
@@ -78,9 +78,9 @@ const Header = () => {
         </ul>
 
         {/* hamburger and shoppingcart */}
-        <div className="flex gap-2">
+        <div className="flex gap-3">
           {/* hamburger */}
-          <div>
+          <div className=" md:hidden">
             <GiHamburgerMenu className=" text-3xl" />
           </div>
           {/* cart */}
